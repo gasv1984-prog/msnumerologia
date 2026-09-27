@@ -495,8 +495,8 @@
         const API_BASE = 'https://api-resultadosloterias.com/api/results';
 
         function init() {
-            const ayer = new Date(); ayer.setDate(ayer.getDate() - 1);
-            document.getElementById('filtroFecha').value = fmt(ayer);
+            const hoy = new Date();
+            document.getElementById('filtroFecha').value = fmt(hoy);
             cargarResultados();
         }
         function fmt(d) { return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
