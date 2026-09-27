@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miguel Salazar Numerología — Resultados Oficiales de Loterías</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { cinzel:['Cinzel','serif'], body:['Inter','sans-serif'], numbers:['Space Mono','monospace'] },
+                    animation: { 'fade-in-up':'fadeInUp .6s ease-out forwards', 'float':'float 6s ease-in-out infinite', 'shimmer':'shimmer 2.5s infinite linear' },
+                    keyframes: {
+                        fadeInUp:{ '0%':{ opacity:'0',transform:'translateY(25px)' },'100%':{ opacity:'1',transform:'translateY(0)' } },
+                        float:{ '0%,100%':{ transform:'translateY(0)' },'50%':{ transform:'translateY(-8px)' } },
+                        shimmer:{ '0%':{ backgroundPosition:'-1000px 0' },'100%':{ backgroundPosition:'1000px 0' } }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family:'Inter',sans-serif; scroll-behavior:smooth; transition:background .4s,color .4s; }
+        h1,h2,h3,.font-cinzel { font-family:'Cinzel',serif; }
+        .font-numbers { font-family:'Space Mono',monospace; letter-spacing:.12em; }
+
+        /* --- MODO OSCURO (default) --- */
+        .dark body { background:radial-gradient(ellipse at 50% 0%,#1a1814 0%,#050505 60%,#000 100%); background-attachment:fixed; color:#fff; }
+        .dark .glass { background:linear-gradient(145deg,rgba(30,30,30,.65),rgba(10,10,10,.85)); backdrop-filter:blur(20px); border:1px solid rgba(212,175,55,.15); box-shadow:0 12px 30px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.04); }
+        .dark .gold-glow { text-shadow:0 0 12px rgba(212,175,55,.5),0 0 25px rgba(212,175,55,.25); }
+        .dark .text-main { color:#fff; }
+        .dark .text-sub { color:#9ca3af; }
+        .dark .text-muted { color:#6b7280; }
+        .dark .bg-page { background:#050505; }
+        .dark .border-subtle { border-color:rgba(212,175,55,.15); }
+        .dark .input-bg { background:#0a0a0a; border-color:rgba(212,175,55,.3); color:#fff; }
+        .dark .card-hover:hover { box-shadow:0 20px 45px rgba(212,175,55,.2); border-color:rgba(212,175,55,.5); }
+        .dark .hero-overlay { background:linear-gradient(to bottom,rgba(5,5,5,.92),rgba(5,5,5,.7),rgba(5,5,5,1)); }
+
+        /* --- MODO CLARO --- */
+        :not(.dark) body { background:#f8f6f1; color:#1a1a1a; }
+        :not(.dark) .glass { background:rgba(255,255,255,.85); backdrop-filter:blur(16px); border:1px solid rgba(212,175,55,.25); box-shadow:0 8px 24px rgba(0,0,0,.08); }
+        :not(.dark) .gold-glow { text-shadow:0 0 8px rgba(180,140,30,.3); }
+        :not(.dark) .text-main { color:#1a1a1a; }
+        :not(.dark) .text-sub { color:#555; }
+        :not(.dark) .text-muted { color:#888; }
+        :not(.dark) .bg-page { background:#f0ede6; }
+        :not(.dark) .border-subtle { border-color:rgba(212,175,55,.3); }
+        :not(.dark) .input-bg { background:#fff; border-color:rgba(212,175,55,.4); color:#1a1a1a; }
+        :not(.dark) .card-hover:hover { box-shadow:0 15px 35px rgba(212,175,55,.15); border-color:rgba(212,175,55,.6); }
+        :not(.dark) .hero-overlay { background:linear-gradient(to bottom,rgba(248,246,241,.92),rgba(248,246,241,.75),rgba(248,246,241,1)); }
+        :not(.dark) .dark-only { display:none; }
+
+        .gold-gradient { background:linear-gradient(135deg,#bf953f,#fcf6ba,#b38728,#fbf5b7,#aa771c); -webkit-background-clip:text; background-clip:text; color:transparent; }
+        .service-card { transition:all .4s cubic-bezier(.25,.8,.25,1); }
+        .service-card:hover { transform:translateY(-6px); }
+        .mystic-spinner { width:50px;height:50px;border:3px solid transparent;border-top-color:#d4af37;border-bottom-color:#d4af37;border-radius:50%;animation:spin 1.5s cubic-bezier(.68,-.55,.27,1.55) infinite;position:relative; }
+        @keyframes spin { 0%{transform:rotate(0)} 100%{transform:rotate(360deg)} }
+        ::-webkit-scrollbar { width:6px; }
+        .dark ::-webkit-scrollbar-track { background:#050505; }
+        .dark ::-webkit-scrollbar-thumb { background:linear-gradient(to bottom,#d4af37,#8a6d1c);border-radius:10px; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+
+    <!-- Botón Toggle Modo Claro/Oscuro -->
+    <button onclick="toggleTheme()" id="themeBtn" class="fixed top-5 right-5 z-50 w-11 h-11 rounded-full glass border-subtle flex items-center justify-center transition-all duration-300 hover:scale-110 group" title="Cambiar tema">
+        <!-- Sol (visible en modo oscuro) -->
+        <svg id="iconSun" class="w-5 h-5 text-amber-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+        <!-- Luna (visible en modo claro) -->
+        <svg id="iconMoon" class="w-5 h-5 text-indigo-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+    </button>
+
+    <!-- Botón Flotante WhatsApp -->
+    <a href="https://wa.me/573137009000?text=Hola%20Miguel%2C%20quiero%20una%20consulta%20de%20numerolog%C3%ADa" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-[0_0_25px_rgba(34,197,94,.4)] transform hover:scale-110 transition duration-300 group">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.665.594 1.216.77 1.39.856.173.086.274.072.376-.043.101-.115.433-.505.549-.678.116-.173.231-.144.39-.086.159.058 1.012.477 1.185.563.173.087.289.13.332.202.043.073.043.423-.101.828z"/></svg>
+        <span class="absolute right-16 bg-black/90 text-amber-300 text-xs px-3 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition duration-300 font-bold border border-amber-500/30">Consulta Personalizada</span>
+    </a>
+
+    <!-- ═══════════════ HEADER ═══════════════ -->
+    <header class="relative overflow-hidden border-b border-subtle">
+        <div class="absolute inset-0 z-0"><img src="miguel_banner.png" alt="" class="w-full h-full object-cover object-top opacity-30"></div>
+        <div class="absolute inset-0 hero-overlay z-10"></div>
+        <div class="relative z-20 max-w-6xl mx-auto px-4 py-14 flex flex-col items-center text-center animate-fade-in-up">
+            <img src="logo_ms.png" alt="Logo MS" class="h-24 md:h-28 object-contain drop-shadow-[0_0_20px_rgba(212,175,55,.5)] animate-float mb-5">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-[.15em] mb-2 gold-gradient font-cinzel">Miguel Salazar</h1>
+            <p class="text-xs md:text-sm tracking-[.4em] uppercase mb-8 font-cinzel text-sub border-b border-subtle pb-4 px-8">Maestro en Numerología · Prosperidad · Crecimiento Personal</p>
+            <div class="flex flex-wrap justify-center gap-3 text-[11px] font-bold font-body uppercase tracking-wider">
+                <a href="https://wa.me/573137009000?text=Hola%20Miguel%2C%20quiero%20informaci%C3%B3n" target="_blank" class="flex items-center gap-2 px-5 py-2 rounded-full border border-[#d4af37]/40 text-[#d4af37] hover:bg-[#d4af37] hover:text-black transition-all duration-300">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.665.594 1.216.77 1.39.856.173.086.274.072.376-.043.101-.115.433-.505.549-.678.116-.173.231-.144.39-.086.159.058 1.012.477 1.185.563.173.087.289.13.332.202.043.073.043.423-.101.828z"/></svg>
+                    +57 313 700 9000
+                </a>
+                <a href="https://www.youtube.com/@MSnumerologia" target="_blank" class="flex items-center gap-2 px-5 py-2 rounded-full border border-[#d4af37]/40 text-[#d4af37] hover:bg-[#d4af37] hover:text-black transition-all duration-300">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M21.582 6.186c-.23-.86-.908-1.538-1.768-1.768C18.256 4 12 4 12 4s-6.256 0-7.814.418c-.86.23-1.538.908-1.768 1.768C2 7.744 2 12 2 12s0 4.256.418 5.814c.23.86.908 1.538 1.768 1.768C5.744 20 12 20 12 20s6.256 0 7.814-.418c.86-.23 1.538-.908 1.768-1.768C22 16.256 22 12 22 12s0-4.256-.418-5.814zM9.999 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
+                    @MSnumerologia
+                </a>
+                <a href="http://www.miguelsalazar.com.co" target="_blank" class="flex items-center gap-2 px-5 py-2 rounded-full border border-[#d4af37]/40 text-[#d4af37] hover:bg-[#d4af37] hover:text-black transition-all duration-300">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                    Sitio Web
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════ SECCIÓN SERVICIOS MEJORADA ═══════════════ -->
+    <section class="max-w-7xl mx-auto px-4 py-20">
+        <!-- Título de sección -->
+        <div class="text-center mb-14">
+            <span class="inline-block px-4 py-1 border border-[#d4af37]/30 rounded-full text-[#d4af37] text-[10px] font-bold tracking-[.3em] uppercase mb-4">Servicios Exclusivos</span>
+            <h2 class="text-3xl md:text-4xl font-bold gold-gradient font-cinzel mb-3">¿Cómo Puedo Ayudarte?</h2>
+            <p class="text-sub text-sm max-w-xl mx-auto font-body">Descubre los servicios que han transformado la vida de miles de personas en Colombia y Latinoamérica.</p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row items-stretch gap-10">
+            <!-- Columna Izquierda: Foto + Bio + CTA -->
+            <div class="w-full lg:w-5/12 flex flex-col">
+                <div class="glass rounded-3xl overflow-hidden flex-grow flex flex-col card-hover service-card">
+                    <!-- Foto grande -->
+                    <div class="relative h-72 md:h-80 overflow-hidden">
+                        <img src="miguel_pointing.png" alt="Miguel Salazar — Numerólogo Profesional" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-1000">
+                        <div class="absolute bottom-0 inset-x-0 h-24 bg-gradient-to-t from-black/80 to-transparent"></div>
+                        <div class="absolute bottom-4 left-5">
+                            <span class="bg-[#d4af37] text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">+15 años de experiencia</span>
+                        </div>
+                    </div>
+                    <!-- Texto Bio -->
+                    <div class="p-7 flex flex-col flex-grow">
+                        <h3 class="text-2xl font-bold font-cinzel text-[#d4af37] mb-3">Miguel Salazar</h3>
+                        <p class="text-sub text-sm font-body leading-relaxed mb-6 flex-grow">
+                            Numerólogo certificado y guía espiritual. Ha dedicado su vida a revelar el poder oculto de los números, ayudando a miles de personas a encontrar la prosperidad, la claridad y el propósito a través de la numerología aplicada, la astrología y los rituales de protección energética.
+                        </p>
+                        <!-- CTA Principal -->
+                        <a href="https://wa.me/573137009000?text=Hola%20Miguel%2C%20quiero%20agendar%20una%20consulta%20personalizada" target="_blank" class="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-green-500/30 text-sm uppercase tracking-wider w-full">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.665.594 1.216.77 1.39.856.173.086.274.072.376-.043.101-.115.433-.505.549-.678.116-.173.231-.144.39-.086.159.058 1.012.477 1.185.563.173.087.289.13.332.202.043.073.043.423-.101.828z"/></svg>
+                            Agenda tu Consulta Personal
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna Derecha: 4 Tarjetas de Servicio -->
+            <div class="w-full lg:w-7/12 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <!-- Servicio 1 -->
+                <a href="https://wa.me/573137009000?text=Hola%2C%20quiero%20recibir%20mensajes%20positivos%20y%20de%20crecimiento%20personal" target="_blank" class="glass service-card card-hover rounded-2xl p-7 flex flex-col group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-[#d4af37]/5 rounded-full blur-2xl -translate-y-8 translate-x-8 group-hover:bg-[#d4af37]/15 transition duration-700"></div>
+                    <div class="w-12 h-12 rounded-xl bg-[#d4af37]/10 flex items-center justify-center mb-5 border border-[#d4af37]/20 group-hover:bg-[#d4af37]/25 transition">
+                        <svg class="w-6 h-6 text-[#d4af37]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-base font-cinzel text-[#d4af37] font-bold mb-2 uppercase tracking-wide">Mensajes Positivos</h3>
+                    <p class="text-sub text-xs font-body leading-relaxed flex-grow">Contenido exclusivo de crecimiento personal y superación. Únete a los miles de seguidores que ya transformaron su mentalidad con nuestras enseñanzas en YouTube.</p>
+                    <div class="mt-5 flex items-center gap-2 text-green-500 text-[11px] font-bold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
+                        Escríbenos →
+                    </div>
+                </a>
+                <!-- Servicio 2 -->
+                <a href="https://wa.me/573137009000?text=Hola%2C%20necesito%20informaci%C3%B3n%20sobre%20rituales%20de%20limpieza%20energ%C3%A9tica" target="_blank" class="glass service-card card-hover rounded-2xl p-7 flex flex-col group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-[#d4af37]/5 rounded-full blur-2xl -translate-y-8 translate-x-8 group-hover:bg-[#d4af37]/15 transition duration-700"></div>
+                    <div class="w-12 h-12 rounded-xl bg-[#d4af37]/10 flex items-center justify-center mb-5 border border-[#d4af37]/20 group-hover:bg-[#d4af37]/25 transition">
+                        <svg class="w-6 h-6 text-[#d4af37]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    </div>
+                    <h3 class="text-base font-cinzel text-[#d4af37] font-bold mb-2 uppercase tracking-wide">Rituales de Limpieza</h3>
+                    <p class="text-sub text-xs font-body leading-relaxed flex-grow">Rituales personalizados de protección y purificación energética. Cada proceso se diseña según tu situación para renovar tu campo áurico y blindar tu bienestar.</p>
+                    <div class="mt-5 flex items-center gap-2 text-green-500 text-[11px] font-bold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
+                        Solicita tu Ritual →
+                    </div>
+                </a>
+                <!-- Servicio 3 -->
+                <a href="https://wa.me/573137009000?text=Hola%2C%20quiero%20solicitar%20un%20estudio%20de%20numerolog%C3%ADa%20personalizado" target="_blank" class="glass service-card card-hover rounded-2xl p-7 flex flex-col group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-[#d4af37]/5 rounded-full blur-2xl -translate-y-8 translate-x-8 group-hover:bg-[#d4af37]/15 transition duration-700"></div>
+                    <div class="w-12 h-12 rounded-xl bg-[#d4af37]/10 flex items-center justify-center mb-5 border border-[#d4af37]/20 group-hover:bg-[#d4af37]/25 transition">
+                        <svg class="w-6 h-6 text-[#d4af37]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    </div>
+                    <h3 class="text-base font-cinzel text-[#d4af37] font-bold mb-2 uppercase tracking-wide">Estudios Numerológicos</h3>
+                    <p class="text-sub text-xs font-body leading-relaxed flex-grow">Análisis profundo de tu fecha de nacimiento, nombre completo y ciclos personales. Descifra tu mapa numérico para tomar decisiones con certeza y propósito.</p>
+                    <div class="mt-5 flex items-center gap-2 text-green-500 text-[11px] font-bold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
+                        Pide tu Estudio →
+                    </div>
+                </a>
+                <!-- Servicio 4 -->
+                <a href="https://wa.me/573137009000?text=Hola%2C%20quiero%20recibir%20los%20n%C3%BAmeros%20recomendados%20del%20d%C3%ADa" target="_blank" class="glass service-card card-hover rounded-2xl p-7 flex flex-col group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-[#d4af37]/5 rounded-full blur-2xl -translate-y-8 translate-x-8 group-hover:bg-[#d4af37]/15 transition duration-700"></div>
+                    <div class="w-12 h-12 rounded-xl bg-[#d4af37]/10 flex items-center justify-center mb-5 border border-[#d4af37]/20 group-hover:bg-[#d4af37]/25 transition">
+                        <svg class="w-6 h-6 text-[#d4af37]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14"></path></svg>
+                    </div>
+                    <h3 class="text-base font-cinzel text-[#d4af37] font-bold mb-2 uppercase tracking-wide">Números del Día</h3>
+                    <p class="text-sub text-xs font-body leading-relaxed flex-grow">Predicciones exclusivas y números clave calculados con astrología numérica. Sigue a nuestra comunidad @msnumerologia y recibe recomendaciones diarias.</p>
+                    <div class="mt-5 flex items-center gap-2 text-green-500 text-[11px] font-bold uppercase tracking-wider group-hover:translate-x-1 transition-transform">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771z"/></svg>
+                        Recibe tus Números →
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ SECCIÓN: POR QUÉ ELEGIRME ═══════════════ -->
+    <section class="max-w-7xl mx-auto px-4 py-16 border-t border-subtle">
+        <div class="text-center mb-14">
+            <span class="inline-block px-4 py-1 border border-[#d4af37]/30 rounded-full text-[#d4af37] text-[10px] font-bold tracking-[.3em] uppercase mb-4">Resultados que Hablan</span>
+            <h2 class="text-3xl md:text-4xl font-bold gold-gradient font-cinzel mb-3">¿Por Qué Miles Confían en Miguel Salazar?</h2>
+            <p class="text-sub text-sm max-w-2xl mx-auto font-body">Más de una década conectando a las personas con la frecuencia correcta del éxito. Estos son los resultados que nos respaldan.</p>
+        </div>
+
+        <!-- 3 Pilares con cifras -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+            <div class="glass rounded-2xl p-8 text-center card-hover service-card">
+                <div class="text-5xl font-black font-cinzel gold-gradient mb-2">+15</div>
+                <div class="text-[#d4af37] text-xs font-bold uppercase tracking-widest mb-3 font-cinzel">Años de Experiencia</div>
+                <p class="text-sub text-xs font-body leading-relaxed">Estudiando y aplicando la ciencia de los números en Colombia y Latinoamérica. Cada año perfeccionamos nuestros métodos para brindarte mayor precisión.</p>
+            </div>
+            <div class="glass rounded-2xl p-8 text-center card-hover service-card">
+                <div class="text-5xl font-black font-cinzel gold-gradient mb-2">+50K</div>
+                <div class="text-[#d4af37] text-xs font-bold uppercase tracking-widest mb-3 font-cinzel">Seguidores Activos</div>
+                <p class="text-sub text-xs font-body leading-relaxed">Una comunidad vibrante en YouTube, Facebook y WhatsApp que recibe diariamente mensajes de prosperidad, números clave y guía espiritual personalizada.</p>
+            </div>
+            <div class="glass rounded-2xl p-8 text-center card-hover service-card">
+                <div class="text-5xl font-black font-cinzel gold-gradient mb-2">+8K</div>
+                <div class="text-[#d4af37] text-xs font-bold uppercase tracking-widest mb-3 font-cinzel">Consultas Realizadas</div>
+                <p class="text-sub text-xs font-body leading-relaxed">Estudios numerológicos, rituales de limpieza y sesiones de orientación que han transformado la vida financiera, sentimental y espiritual de nuestros clientes.</p>
+            </div>
+        </div>
+
+        <!-- Testimonios de Éxito -->
+        <div class="mb-16">
+            <h3 class="text-center text-xl md:text-2xl font-bold font-cinzel text-[#d4af37] mb-8">Historias de Éxito</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass rounded-2xl p-7 relative overflow-hidden">
+                    <div class="absolute top-4 right-5 text-[#d4af37]/20 text-6xl font-cinzel font-black leading-none">"</div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-[#d4af37]/20 flex items-center justify-center text-[#d4af37] font-bold font-cinzel text-sm">CA</div>
+                        <div>
+                            <div class="text-main text-sm font-bold font-body">Carlos A.</div>
+                            <div class="text-muted text-[10px] font-body">Medellín, Colombia</div>
+                        </div>
+                    </div>
+                    <p class="text-sub text-xs font-body leading-relaxed italic">"Después de mi estudio numerológico con Miguel, entendí cuáles eran mis ciclos de abundancia. En menos de 3 meses logré cerrar el negocio que había buscado por años. Los números no mienten."</p>
+                    <div class="flex gap-1 mt-4">
+                        <span class="text-amber-400">★</span><span class="text-amber-400">★</span><span class="text-amber-400">★</span><span class="text-amber-400">★</span><span class="text-amber-400">★</span>
+                    </div>
+                </div>
+                <div class="glass rounded-2xl p-7 relative overflow-hidden">
+                    <div class="absolute top-4 right-5 text-[#d4af37]/20 text-6xl font-cinzel font-black leading-none">"</div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-[#d4af37]/20 flex items-center justify-center text-[#d4af37] font-bold font-cinzel text-sm">ML</div>
+                        <div>
+                            <div class="text-main text-sm font-bold font-body">María L.</div>
+                            <div class="text-muted text-[10px] font-body">Bogotá, Colombia</div>
+                        </div>
+                    </div>
+                    <p class="text-sub text-xs font-body leading-relaxed italic">"Los rituales de limpieza cambiaron mi energía por completo. Sentía que todo estaba estancado, pero desde la primera sesión empecé a notar oportunidades que antes no veía. Miguel tiene un don."</p>
+                    <div class="flex gap-1 mt-4">
+                        <span class="text-amber-400">★</span><span class="text-amber-400">★</span><span class="text-amber-400">★</span><span class="text-amber-400">★</span><span class="text-amber-400">★</span>
+                    </div>
+                </div>
+                <div class="glass rounded-2xl p-7 relative overflow-hidden">
+                    <div class="absolute top-4 right-5 text-[#d4af37]/20 text-6xl font-cinzel font-black leading-none">"</div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-[#d4af37]/20 flex items-center justify-center text-[#d4af37] font-bold font-cinzel text-sm">JP</div>
+                        <div>
+                            <div class="text-main text-sm font-bold font-body">Jorge P.</div>
+                            <div class="text-muted text-[10px] font-body">Cali, Colombia</div>
+                        </div>
+                    </div>
+                    <p class="text-sub text-xs font-body leading-relaxed italic">"Llevo 2 años siguiendo los números recomendados de Miguel. La precisión es impresionante. Me ha ayudado a tomar mejores decisiones y a conectar con mi propósito. 100% recomendado."</p>
+                    <div class="flex gap-1 mt-4">
+                        <span class="text-amber-400">★</span><span class="text-amber-400">★</span><span class="text-amber-400">★</span><span class="text-amber-400">★</span><span class="text-amber-400">★</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preguntas Frecuentes -->
+        <div class="mb-16">
+            <h3 class="text-center text-xl md:text-2xl font-bold font-cinzel text-[#d4af37] mb-8">Preguntas Frecuentes</h3>
+            <div class="max-w-3xl mx-auto space-y-3" id="faqContainer">
+                <div class="glass rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left group">
+                        <span class="text-main text-sm font-bold font-body pr-4">¿Cómo funciona una consulta de numerología?</span>
+                        <svg class="w-5 h-5 text-[#d4af37] shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500">
+                        <p class="px-6 pb-5 text-sub text-xs font-body leading-relaxed">A través de WhatsApp, coordinaremos tu consulta personalizada. Necesitaremos tu nombre completo, fecha de nacimiento y las preguntas específicas que deseas resolver. Miguel analizará tu mapa numerológico para revelarte tus ciclos de prosperidad, tus números de suerte y las fechas más favorables para tomar decisiones clave en tu vida.</p>
+                    </div>
+                </div>
+                <div class="glass rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left group">
+                        <span class="text-main text-sm font-bold font-body pr-4">¿Puedo recibir consultas desde fuera de Colombia?</span>
+                        <svg class="w-5 h-5 text-[#d4af37] shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500">
+                        <p class="px-6 pb-5 text-sub text-xs font-body leading-relaxed">¡Absolutamente! Atendemos a personas de todo el mundo a través de WhatsApp y videollamada. La numerología es universal, no importa dónde te encuentres. Tenemos clientes activos en Estados Unidos, España, México, Venezuela, Ecuador y toda Latinoamérica que reciben sus estudios y números recomendados a diario.</p>
+                    </div>
+                </div>
+                <div class="glass rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left group">
+                        <span class="text-main text-sm font-bold font-body pr-4">¿Los números recomendados realmente funcionan?</span>
+                        <svg class="w-5 h-5 text-[#d4af37] shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500">
+                        <p class="px-6 pb-5 text-sub text-xs font-body leading-relaxed">Nuestros números son calculados mediante análisis astrológico-numérico avanzado. Miles de testimonios respaldan la efectividad de nuestras recomendaciones. Recuerda que la numerología es una herramienta de orientación para sincronizarte con las energías favorables del universo. Los resultados dependen de la fe, la constancia y la conexión que mantengas con tu frecuencia personal.</p>
+                    </div>
+                </div>
+                <div class="glass rounded-xl overflow-hidden">
+                    <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center px-6 py-5 text-left group">
+                        <span class="text-main text-sm font-bold font-body pr-4">¿Qué incluye el estudio numerológico personalizado?</span>
+                        <svg class="w-5 h-5 text-[#d4af37] shrink-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-500">
+                        <p class="px-6 pb-5 text-sub text-xs font-body leading-relaxed">El estudio completo incluye: análisis de tu número de vida, número de destino, número de expresión, ciclos anuales y mensuales, compatibilidad numerológica, tus días y horas de mayor poder, y recomendaciones personalizadas para salud, dinero, amor y crecimiento profesional. Recibirás un informe detallado y una sesión explicativa por videollamada o audio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ BLOQUE CTA FINAL ═══════════════ -->
+    <section class="relative overflow-hidden py-20 border-t border-subtle">
+        <div class="absolute inset-0 z-0"><img src="miguel_banner.png" alt="" class="w-full h-full object-cover object-center opacity-20"></div>
+        <div class="absolute inset-0 hero-overlay z-10"></div>
+        <div class="relative z-20 max-w-3xl mx-auto px-6 text-center">
+            <div class="inline-block mb-6">
+                <img src="logo_ms.png" alt="MS" class="h-16 drop-shadow-[0_0_15px_rgba(212,175,55,.4)]">
+            </div>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-black font-cinzel gold-gradient mb-5 leading-tight">Tu Momento de Transformación es Ahora</h2>
+            <p class="text-sub text-base md:text-lg font-body leading-relaxed mb-8 max-w-2xl mx-auto">
+                No dejes tu éxito al azar. Miles de personas ya descubrieron el poder de la numerología para atraer riqueza, amor y propósito a sus vidas. <strong class="text-main">El próximo puedes ser tú.</strong>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://wa.me/573137009000?text=Hola%20Miguel%2C%20quiero%20una%20consulta%20personalizada%20de%20numerolog%C3%ADa%20para%20transformar%20mi%20vida" target="_blank" class="flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-green-500/40 text-sm uppercase tracking-wider hover:-translate-y-1">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.665.594 1.216.77 1.39.856.173.086.274.072.376-.043.101-.115.433-.505.549-.678.116-.173.231-.144.39-.086.159.058 1.012.477 1.185.563.173.087.289.13.332.202.043.073.043.423-.101.828z"/></svg>
+                    Consulta Ahora por WhatsApp
+                </a>
+                <a href="https://www.youtube.com/@MSnumerologia" target="_blank" class="flex items-center justify-center gap-3 border-2 border-[#d4af37]/50 text-[#d4af37] hover:bg-[#d4af37] hover:text-black font-bold py-4 px-10 rounded-2xl transition-all duration-300 text-sm uppercase tracking-wider hover:-translate-y-1">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M21.582 6.186c-.23-.86-.908-1.538-1.768-1.768C18.256 4 12 4 12 4s-6.256 0-7.814.418c-.86.23-1.538.908-1.768 1.768C2 7.744 2 12 2 12s0 4.256.418 5.814c.23.86.908 1.538 1.768 1.768C5.744 20 12 20 12 20s6.256 0 7.814-.418c.86-.23 1.538-.908 1.768-1.768C22 16.256 22 12 22 12s0-4.256-.418-5.814zM9.999 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>
+                    Ver Canal de YouTube
+                </a>
+            </div>
+            <p class="text-muted text-[11px] font-body mt-6 uppercase tracking-widest">📱 +57 313 700 9000 · @msnumerologia · www.miguelsalazar.com.co</p>
+        </div>
+    </section>
+
+    <!-- ═══════════════ PANEL RESULTADOS ═══════════════ -->
+    <section id="resultados" class="max-w-7xl mx-auto px-4 py-10 w-full">
+        <div class="text-center mb-10">
+            <span class="inline-block px-4 py-1 border border-[#d4af37]/30 rounded-full text-[#d4af37] text-[10px] font-bold tracking-[.3em] uppercase mb-4">En Vivo · Todas las Loterías de Colombia</span>
+            <h2 class="text-3xl md:text-5xl font-black mb-4 uppercase tracking-widest gold-gradient font-cinzel">Resultados Oficiales</h2>
+            <p class="text-sub font-body max-w-2xl mx-auto text-sm">Datos actualizados diariamente. Selecciona la fecha y descubre si la energía numérica estuvo a tu favor.</p>
+        </div>
+        <!-- Filtros -->
+        <div class="glass rounded-2xl p-6 md:p-8 flex flex-col lg:flex-row gap-6 items-end justify-between shadow-2xl relative overflow-hidden">
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-[#d4af37]/10 blur-[80px] rounded-full pointer-events-none"></div>
+            <div class="w-full lg:w-1/3 z-10">
+                <label class="block text-[#d4af37] text-xs uppercase tracking-[.2em] mb-2 font-bold font-cinzel">Fecha del Sorteo</label>
+                <input type="date" id="filtroFecha" class="w-full input-bg rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#d4af37]/50 font-numbers text-sm cursor-pointer transition-colors border" onchange="cargarResultados()">
+            </div>
+            <div class="w-full lg:w-1/3 z-10">
+                <label class="block text-[#d4af37] text-xs uppercase tracking-[.2em] mb-2 font-bold font-cinzel">Filtrar por Lotería / Chance</label>
+                <div class="relative">
+                    <select id="filtroLoteria" class="w-full input-bg rounded-xl pl-4 pr-10 py-3.5 focus:outline-none focus:ring-2 focus:ring-[#d4af37]/50 appearance-none font-body text-sm cursor-pointer transition-colors border" onchange="renderizarResultados()">
+                        <option value="ALL">Mostrar Todas</option>
+                    </select>
+                    <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-[#d4af37]"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></div>
+                </div>
+            </div>
+            <div class="w-full lg:w-1/3 flex justify-end z-10">
+                <button onclick="cargarResultados()" class="w-full bg-gradient-to-r from-[#d4af37] via-[#fcf6ba] to-[#d4af37] bg-[length:200%_auto] animate-shimmer hover:shadow-[0_0_25px_rgba(212,175,55,.5)] text-black font-extrabold uppercase tracking-widest py-3.5 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                    Sincronizar
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resultados Renderizados -->
+    <main class="max-w-7xl mx-auto px-4 pb-24 w-full flex-grow relative">
+        <div id="loading" class="flex flex-col items-center justify-center py-20">
+            <div class="relative flex items-center justify-center mb-6"><div class="mystic-spinner"></div><div class="absolute text-[#d4af37] text-xl font-cinzel font-bold">MS</div></div>
+            <span class="text-[#d4af37] font-cinzel text-base tracking-[.3em] uppercase animate-pulse">Cargando Resultados...</span>
+        </div>
+        <div id="statsBar" class="hidden text-center mb-6">
+            <span class="text-muted text-xs font-body">Mostrando <strong id="statsCount" class="text-[#d4af37]">0</strong> resultados para el <strong id="statsDate" class="text-main"></strong></span>
+        </div>
+        <div id="contenedorResultados" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 hidden"></div>
+        <div id="mensajeVacio" class="hidden text-center py-24 animate-fade-in-up">
+            <div class="w-20 h-20 mx-auto border-2 border-dashed border-[#d4af37]/30 rounded-full flex items-center justify-center mb-5">
+                <svg class="w-8 h-8 text-[#d4af37]/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-cinzel text-main mb-2">Sin Resultados Aún</h3>
+            <p class="text-sub font-body text-sm max-w-md mx-auto">Los sorteos de hoy podrían no haberse publicado todavía. Intenta con la fecha de ayer o selecciona otra.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t-2 border-[#d4af37]/20 bg-page pt-10 pb-6 text-center mt-auto relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('miguel_banner.png')] opacity-5 bg-cover bg-center"></div>
+        <div class="relative z-10 flex flex-col items-center">
+            <img src="logo_ms.png" alt="Logo MS" class="h-12 mb-4 opacity-60">
+            <p class="text-muted text-sm font-body mb-1">© <span id="year"></span> Miguel Salazar Numerología.</p>
+            <p class="text-[#d4af37]/40 text-[10px] uppercase tracking-[.3em] font-cinzel font-bold mt-1">Luz · Éxito · Abundancia Infinita</p>
+        </div>
+    </footer>
+
+    <script>
+        /* ══════ TEMA CLARO / OSCURO ══════ */
+        function toggleTheme() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            localStorage.setItem('ms-theme', isDark ? 'dark' : 'light');
+            updateIcons();
+        }
+        function updateIcons() {
+            const isDark = document.documentElement.classList.contains('dark');
+            document.getElementById('iconSun').classList.toggle('hidden', !isDark);
+            document.getElementById('iconMoon').classList.toggle('hidden', isDark);
+        }
+        // Cargar preferencia guardada
+        (function() {
+            const saved = localStorage.getItem('ms-theme');
+            if (saved === 'light') document.documentElement.classList.remove('dark');
+            updateIcons();
+        })();
+
+        /* ══════ LÓGICA DE RESULTADOS ══════ */
+        document.getElementById('year').textContent = new Date().getFullYear();
+        let datosActuales = [];
+        const API_BASE = 'https://api-resultadosloterias.com/api/results';
+
+        function init() {
+            const ayer = new Date(); ayer.setDate(ayer.getDate() - 1);
+            document.getElementById('filtroFecha').value = fmt(ayer);
+            cargarResultados();
+        }
+        function fmt(d) { return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+
+        async function cargarResultados() {
+            const loading=document.getElementById('loading'), contenedor=document.getElementById('contenedorResultados'), vacio=document.getElementById('mensajeVacio'), stats=document.getElementById('statsBar');
+            contenedor.innerHTML=''; contenedor.classList.add('hidden'); vacio.classList.add('hidden'); stats.classList.add('hidden'); loading.classList.remove('hidden');
+            let fecha = document.getElementById('filtroFecha').value || fmt(new Date());
+            try {
+                let resp = await fetch(`${API_BASE}/${fecha}`);
+                let json = await resp.json();
+                datosActuales = json.data || [];
+                if (datosActuales.length === 0) {
+                    const d = new Date(fecha+'T12:00:00'); d.setDate(d.getDate()-1);
+                    const f2 = fmt(d);
+                    resp = await fetch(`${API_BASE}/${f2}`);
+                    json = await resp.json();
+                    datosActuales = json.data || [];
+                    if (datosActuales.length > 0) { document.getElementById('filtroFecha').value = f2; fecha = f2; }
+                }
+                const vistos = new Set();
+                datosActuales = datosActuales.filter(r => {
+                    if (r.lottery && r.lottery.startsWith('5ta-')) return false;
+                    const k = r.lottery+'|'+r.result; if (vistos.has(k)) return false; vistos.add(k); return true;
+                });
+                const sel = document.getElementById('filtroLoteria'), cv = sel.value;
+                sel.innerHTML = '<option value="ALL">Mostrar Todas</option>';
+                [...new Set(datosActuales.map(r=>r.lottery))].sort().forEach(n => { const o=document.createElement('option'); o.value=n; o.textContent=n; sel.appendChild(o); });
+                if ([...sel.options].some(o=>o.value===cv)) sel.value=cv;
+                renderizarResultados();
+            } catch(e) {
+                console.error(e); loading.classList.add('hidden');
+                vacio.innerHTML='<h3 class="text-red-500 font-cinzel text-lg font-bold mb-2">Error de Conexión</h3><p class="text-sub text-sm">No se pudo conectar con el servidor. Intenta de nuevo.</p>';
+                vacio.classList.remove('hidden');
+            }
+        }
+
+        function renderizarResultados() {
+            const loading=document.getElementById('loading'), contenedor=document.getElementById('contenedorResultados'), vacio=document.getElementById('mensajeVacio'), stats=document.getElementById('statsBar');
+            loading.classList.add('hidden'); contenedor.innerHTML='';
+            const filtro = document.getElementById('filtroLoteria').value;
+            let datos = filtro==='ALL' ? datosActuales : datosActuales.filter(r=>r.lottery===filtro);
+            if (!datos.length) { contenedor.classList.add('hidden'); stats.classList.add('hidden'); vacio.classList.remove('hidden'); return; }
+            vacio.classList.add('hidden'); stats.classList.remove('hidden'); contenedor.classList.remove('hidden');
+            document.getElementById('statsCount').textContent = datos.length;
+            const f = document.getElementById('filtroFecha').value;
+            document.getElementById('statsDate').textContent = new Date(f+'T12:00:00').toLocaleDateString('es-CO',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+            let delay=0;
+            datos.forEach(r => {
+                const serie = (r.series && r.series!=='null' && r.series!=='') ? r.series : null;
+                const card = document.createElement('div');
+                card.className='glass rounded-2xl overflow-hidden animate-fade-in-up card-hover service-card border-t-4 border-t-[#d4af37] group';
+                card.style.animationDelay=`${delay}s`; delay+=.03;
+                card.innerHTML=`
+                    <div class="p-4 flex justify-between items-center border-b border-subtle">
+                        <div><h3 class="font-cinzel font-bold text-xs text-[#d4af37] uppercase leading-tight">${r.lottery}</h3><span class="text-[10px] text-muted font-body">${r.date}</span></div>
+                        <button onclick="compartirWA('${r.lottery.replace(/'/g,"\\'")}','${r.result}','${serie||"—"}','${r.date}')" class="text-muted hover:text-green-400 transition-colors p-1.5 rounded-full hover:bg-green-500/10" title="Compartir por WhatsApp">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.665.594 1.216.77 1.39.856.173.086.274.072.376-.043.101-.115.433-.505.549-.678.116-.173.231-.144.39-.086.159.058 1.012.477 1.185.563.173.087.289.13.332.202.043.073.043.423-.101.828z"/></svg>
+                        </button>
+                    </div>
+                    <div class="p-6 text-center relative overflow-hidden">
+                        <div class="text-5xl font-bold text-main tracking-[.15em] gold-glow font-numbers mb-2 transition-transform duration-500 group-hover:scale-110">${r.result}</div>
+                        ${serie ? `<div class="inline-flex items-center gap-2 border border-[#d4af37]/30 px-4 py-1.5 rounded-lg text-xs tracking-widest bg-[#d4af37]/10 font-body"><span class="text-muted">SERIE</span><span class="font-bold text-[#d4af37] font-numbers">${serie}</span></div>` : ''}
+                    </div>`;
+                contenedor.appendChild(card);
+            });
+        }
+
+        function compartirWA(n,num,s,f) {
+            const t=`🏆 *${n}*\n📅 ${f}\n🔢 Resultado: *${num}*${s!=='—'?' (Serie '+s+')':''}\n\n✨ www.miguelsalazar.com.co\n📱 +57 313 700 9000`;
+            window.open(`https://wa.me/?text=${encodeURIComponent(t)}`,'_blank');
+        }
+
+        /* ══════ FAQ ACORDEÓN ══════ */
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector('svg');
+            const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+            // Cerrar todos
+            document.querySelectorAll('.faq-answer').forEach(a => { a.style.maxHeight = '0px'; });
+            document.querySelectorAll('#faqContainer button svg').forEach(i => { i.style.transform = 'rotate(0deg)'; });
+            // Abrir el clickeado si estaba cerrado
+            if (!isOpen) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
